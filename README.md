@@ -84,7 +84,7 @@ Swagger UI lets you try the API endpoints from your browser.
 Open a second terminal, go to the repository directory, activate the virtual environment, and run:
 
 ```bash
-python simulator/simulator.py
+python simulator/simulate.py
 ```
 
 The simulator registers `device-01` through `device-05` and sends heartbeats every five seconds. Leave it running while testing the fleet.
@@ -94,7 +94,7 @@ The simulator registers `device-01` through `device-05` and sends heartbeats eve
 Open a third terminal, go to the repository directory, activate the virtual environment, and run:
 
 ```bash
-python simulator/controller.py
+python simulator/control.py
 ```
 
 Use the commands printed by the controller to check status or start and stop individual devices.
