@@ -171,3 +171,15 @@ def test_api_status_changes_after_timeout(monkeypatch):
     assert response.json()["status"] == "OFFLINE"
 
 
+def test_list_devices_returns_registered_devices():
+    client.post(
+        "/devices",
+        json={"id": "device-01", "name": "Device 01"},
+    )
+
+    response = client.get("/devices")
+
+    assert response.status_code == 200
+    assert len(response.json()) == 1
+    assert response.json()[0]["id"] == "device-01"
+    assert response.json()[0]["status"] == "OFFLINE"
