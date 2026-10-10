@@ -169,3 +169,5 @@ def test_api_status_changes_after_timeout(monkeypatch):
     response = client.get("/devices/device-timeout")
     assert response.status_code == 200
     assert response.json()["status"] == "OFFLINE"
+
+

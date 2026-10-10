@@ -99,6 +99,10 @@ def main():
                 )
                 response.raise_for_status()
                 print("Simulator shutdown requested.")
+            except requests.ConnectionError:
+                print("Simulator is already stopped.")
+            except requests.Timeout:
+                print("Shutdown request timed out.")
             except requests.RequestException as exc:
                 print(f"Could not stop simulator: {exc}")
             break

@@ -65,7 +65,11 @@ def get_device_or_404(device_id: str) -> dict:
     return device
 
 
-@app.get("/", response_class=HTMLResponse)
+@app.get(
+    "/",
+    response_class=HTMLResponse,
+    include_in_schema=False,
+)
 def home():
     return """
     <!doctype html>
